@@ -2,20 +2,7 @@
 
 Simple Python API for WEMT electromagnetic tracking modules connected over
 Bluetooth (WEMT-BT). It follows the same layout and calls as the TCP
-`wemt_api` package, but reads the nRF52 Bluetooth receiver's serial port.
-
-One receiver forwards packets from several WEMT modules. Each 59-byte packet
-carries:
-
-- byte `0`: head `0xaa`
-- byte `1`: module id (wire ids `7..10` are aliases of modules `3, 2, 5, 6`)
-- byte `2`: battery level
-- bytes `3..56`: three frames of `uint32` timestamp, `int16` x, y, z (+-2 m) and `int16` qw, qx, qy, qz (+-1)
-- byte `57`: algorithm status (`note`)
-- byte `58`: terminator `0x0a`
-- positions are converted from meters to millimeters
-
-Streaming is started with `mag start\r\n` and stopped with `mag stop\r\n`.
+`wemt_api` package.
 
 ## Install
 
