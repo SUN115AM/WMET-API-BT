@@ -39,7 +39,7 @@ Other calls:
 - `api.init_pose()`: send `init pose` (same as the Init Pose button in the PyQt app)
 - `api.send_command("mag stop")`: send any raw text command
 - `WemtBtAPI(port=..., send_start=False)`: don't send `mag start` / `mag stop` (device already streaming)
-- `WemtBtAPI(port=..., module_name="0026")`: send `set name 0026` first
+- `WemtBtAPI(port=..., module_name="0026")`: send bytes `set name 0026\r\n` first for initialization
 
 Finding the receiver's COM port:
 
